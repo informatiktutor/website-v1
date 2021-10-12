@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+@import "../node_modules/bulma/bulma";
+@import "../node_modules/@creativebulma/bulma-divider/dist/bulma-divider.min";
+
+.icon-signal {
+    background: url('../svg/signal-messenger.svg') no-repeat top left;
+    background-size: contain;
+    margin: .5rem;
+    height: 1rem;
+    width: 1rem;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.page {
+    flex: 1;
+}
+
+footer.footer {
+    background-color: inherit;
+    padding: 1rem;
+    font-size: 9pt;
+    color: #777;
+
+    div.content {
+        * {
+            margin: 2pt;
+        }
+
+        a {
+            color: #777;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 1pt;
+        }
+    }
+}
