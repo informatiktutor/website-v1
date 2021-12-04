@@ -3,6 +3,10 @@
 
 # TODO what happens if the watch command is run during a commit? explosion?
 
+# make sure we are not commiting the current docs folder.
+# this way we don't have to make remember to not accidentally stage it.
+git reset docs
+
 git checkout docs # make sure the old stuff is stashed to prevent conflicts
 git stash --keep-index --include-untracked
 
