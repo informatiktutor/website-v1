@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <%- include('_views/include/head') %> 
-    <link rel="stylesheet" href="assets/icons/css/icons.css">
-    <script>
-      window.sa_event =
-        window.sa_event ||
-        function () {
-          var a = [].slice.call(arguments);
-          window.sa_event.q
-            ? window.sa_event.q.push(a)
-            : (window.sa_event.q = [a]);
-        };
-    </script>
+    <title>Nachhilfe für Informatik-Studenten</title>
+    <%- include('_views/include/head') %>
   </head>
-  <body>
+  <body class="has-navbar-fixed-top">
+    <%- include('_views/components/header', {
+      index: true
+    }) %>
     <div class="page">
-      <%- include('_views/page') %>
+      <div class="content">
+        <%- include('_views/content/index') %>
+      </div>
     </div>
     <%- include('_views/components/footer') %>
-    <%- include('_views/components/analytics') %>
-    <% if (is_development) { %>
-      <script>
-        window.is_development = true;
-      </script>
-    <% } %>
+    <%- include('_views/include/scripts') %>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
+
+<!-- TODO Ideas:
+- Click on messenger button opens QR code and option to open the desktop app
+- Scrolling to anchor adds padding to bottom of page
+  so that the anchor can be at the top of the page
+
+-->

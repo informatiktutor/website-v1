@@ -1,3 +1,6 @@
 
+.icon-qrcode:before { content: '\e800'; } /* '' */
+.icon-videocam:before { content: '\e801'; } /* '' */
+.icon-paper-plane:before { content: '\f1d8'; } /* '' */
 .icon-paper-plane:before { content: '\f1d8'; } /* '' */
 .icon-whatsapp:before { content: '\f232'; } /* '' */

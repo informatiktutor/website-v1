@@ -1,0 +1,21 @@
+<% side = locals.right ? 'right' : 'left' %>
+<div class="chat-bubble-container is-<%= side %><%= locals.first ? ' is-first' : ''
+    %><%= locals.container_class ? ' ' + locals.container_class : '' %>">
+  <p class="chat-bubble<%= locals.include_file && !message.is_text ? ' fill-content' : ''
+      %> <%= locals.class %>">
+    <% if (locals.first) { %>
+      <%- include('_views/components/chat/arrow-' + side + '.ejs') %>
+    <% } %>
+    <span class="chat-message">
+      <% if (locals.text) { %>
+        <%= locals.text.trim() %>
+      <% } else if (locals.html) { %>
+        <%- locals.html.trim() %>
+      <% } else if (locals.include_file) { %>
+        <%- include(locals.include_file) %>
+      <% } else { %>
+        <% throw 'text or include required' %>
+      <% } %>
+    </span>
+  </p>
+</div>
