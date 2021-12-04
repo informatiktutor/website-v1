@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <title>Nachhilfe für Informatik-Studenten</title>
     <%- include('_views/include/head') %>
+    <%- include('_views/include/meta', {
+      title: 'Nachhilfe für Informatik-Studenten',
+      description: 'Hey, mein Name ist Jonas! Ich gebe Informatik-Studenten privat Nachhilfe.'
+    }) %>
   </head>
   <body class="has-navbar-fixed-top">
     <%- include('_views/components/header', {
