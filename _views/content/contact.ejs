@@ -1,0 +1,64 @@
+<div class="segment">
+  <div class="segment-content">
+    <h5 class="title is-5 mt-0">
+      Kontaktdaten
+    </h5>
+    <p class="mb-2">
+      <span class="tag is-light">
+        <b>Telefon</b>
+      </span>&ensp;
+      <a href="tel:+4915735689487">
+        +49 1573 5689487
+      </a>
+    </p>
+    <p>
+      <span class="tag is-light">
+        <b>E-Mail</b>
+      </span>&ensp;
+      <a href="mailto:jonas@informatiktutor.de">
+        jonas@informatiktutor.de
+      </a>
+    </p>
+    <!-- Add GitHub and LinkedIn links. -->
+  </div>
+</div>
+
+<div class="segment">
+  <div class="segment-content">
+    <h5 class="title is-5 mt-0">
+      Messenger
+    </h5>
+    <%- include('_views/components/chat.ejs', {
+      messages: [
+        {
+          include_file: '_views/components/buttons/whatsapp',
+          container_class: 'no-arrow-padding',
+          class: 'chat-button is-wide'
+        },
+        {
+          include_file: '_views/components/buttons/signal',
+          container_class: 'no-arrow-padding',
+          class: 'chat-button is-wide'
+        },
+        {
+          include_file: '_views/components/buttons/discord',
+          container_class: 'no-arrow-padding', 
+          class: 'chat-button is-wide'
+        },
+      ]
+    }) %>
+  </div>
+</div>
+
+<div class="segment">
+  <div class="segment-content">
+    <h5 class="title is-5 mt-0">
+      Weitere
+    </h5>
+    <div class="buttons">
+      <!-- TODO Add link to booking page. -->
+      <!-- <%- include('_views/components/buttons/zoom') %> -->
+      <%- include('_views/components/buttons/email') %>
+    </div>
+  </div>
+</div>

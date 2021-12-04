@@ -1,0 +1,42 @@
+<nav id="header-container" class="navbar is-fixed-top">
+  <!-- add the navbar class because it is needed as an immediate parent by bulma -->
+  <div id="header" class="navbar">
+    <div class="navbar-brand cover-container mr-1">
+      <span class="cover avatar-cover"></span>
+      <img class="avatar" src="/assets/images/avatar.jpg" draggable="false">
+    </div>
+    <div class="navbar-menu is-active">
+      <div class="navbar-start">
+        <div class="navbar-item">
+          <% url = '/kontakt.html' %>
+          <% text = 'Kontakt' %>
+          <% if (!locals.index) { %>
+            <% url = '/' %>
+            <% text = 'Zurück' %>
+          <% } %>
+          <a href="<%= url %>" class="tag-button no-underline">
+            <span class="tag is-light is-inline-tag">
+              <%= text %>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <% buttons = [
+          { text: 'Leistung', url: '/#leistung' },
+          { text: 'Details', url: '/#details' },
+        ] %>
+        <% for (let i = 0; i < buttons.length; i++) { %>
+          <% button = buttons[i]; %>
+          <div class="navbar-item <%= button.class ? button.class : '' %>">
+            <a href="<%= button.url %>" class="tag-button no-underline">
+              <span class="tag is-info is-light is-inline-tag">
+                <%= button.text %>
+              </span>
+            </a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

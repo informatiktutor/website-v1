@@ -1,0 +1,21 @@
+<% messages = locals.messages %>
+<div class="chat-container<%= locals.container_class ? ' ' + locals.container_class : ''%>">
+  <% last_side = null %>
+  <% for (let i = 0; i < messages.length; i++) { %>
+    <% message = messages[i] %>
+    <% side = message.self ? 'left' : 'right' %>
+    <% first = side !== last_side %>
+    <%- include('_views/components/chat/bubble.ejs', {
+      first,
+      left: side === 'left',
+      right: side === 'right',
+      text: message.text,
+      html: message.html,
+      include_file: message.include_file,
+      container_class: message.container_class,
+      class: message.class,
+      is_text: message.is_text
+    }) %>
+    <% last_side = side %>
+  <% } %>  
+</div>

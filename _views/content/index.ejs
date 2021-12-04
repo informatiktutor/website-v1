@@ -1,0 +1,246 @@
+<div class="segment pt-0">
+  <div class="segment-content hero">
+    <div class="hero-body px-0 mb-2">
+      <%- include('_views/components/chat.ejs', {
+        messages: [
+          {
+            self: true,
+            text: `Hey, mein Name ist Jonas!`
+          },
+          {
+            self: true,
+            // html: `Ich gebe Informatik-Studenten wie Dir online Nachhilfe.`
+            text: `
+              Ich bin Informatiker und
+              gebe Studenten privat individuelle Nachhilfe auf Augenhöhe.
+            `
+          },
+          // {
+          //   self: true,
+          //   text: 'ddd'
+          // },
+          {
+            self: true,
+            text: `
+              Falls Du Schwierigkeiten hast,
+              bist Du hier richtig!
+            `
+          },
+          // {
+          //   include_file: '_views/components/buttons/whatsapp',
+          //   class: 'chat-button is-fullwidth'
+          // },
+          // {
+          //   include_file: '_views/components/buttons/signal',
+          //   class: 'chat-button is-fullwidth'
+          // },
+          // {
+          //   include_file: '_views/components/buttons/discord',
+          //   class: 'chat-button is-fullwidth'
+          // },
+          // {
+          //   include_file: '_views/components/buttons/more',
+          //   class: 'chat-button is-fullwidth'
+          // },
+          // {
+          //   include_file: '_views/components/buttons/zoom',
+          //   class: 'chat-button'
+          // },
+          // {
+          //   include_file: '_views/components/buttons/email',
+          //   container_class: 'is-hidden-mobile',
+          //   class: 'chat-button'
+          // },
+        ]
+      }) %>
+    </div>
+  </div>
+</div>
+
+<span id="leistung" class="anchor is-tall"></span>
+<div class="segment notification emphasised">
+  <div class="segment-content">
+    <h5 class="title is-5 mt-0" style="padding-left: .9rem;">
+      Was biete ich an?
+    </h5>
+    <ol>
+      <li>Gemeinsame Bearbeitung Deiner Aufgaben</li>
+      <li>Korrektur und Verbesserung Deiner Lösungen</li>
+      <li>Anfertigung von Musterlösungen</li>
+      <li>Erklärung von Vorlesungsinhalten</li>
+      <!-- <li>Hilfe bei der Prüfungsvorbereitung</li> -->
+    </ol>
+  </div>
+</div>
+
+<span id="ablauf" class="anchor"></span>
+<div class="segment">
+  <div class="segment-content is-text is-wide">
+    <h5 class="title is-5 mt-0">
+      Ablauf
+    </h5>
+    <p>
+      Kontaktiere mich und schildere wobei Du Hilfe benötigst.
+      Sende mir dazu die nötigen Aufgaben, Lösungsansätze
+      oder Themengebiete, sodass ich verstehe worum es geht.
+    </p>
+    <div class="my-5 py-1">
+      <%- include('_views/components/chat.ejs', {
+        messages: [
+          // {
+          //   self: true,
+          //   text: `
+          //     Ich vermittle Dir das nötige Wissen auf eine verständliche Weise,
+          //     sodass Du Deine Aufgaben selbstständig lösen kannst.
+          //   `,
+          //   container_class: 'no-arrow-padding',
+          //   class: 'is-wide'
+          // }
+  
+          {
+            include_file: '_views/components/buttons/whatsapp',
+            class: 'chat-button is-fullwidth'
+          },
+          {
+            include_file: '_views/components/buttons/discord',
+            class: 'chat-button is-fullwidth'
+          },
+          {
+            include_file: '_views/components/buttons/more',
+            class: 'chat-button is-fullwidth'
+          },
+        ]
+      }) %>
+    </div>
+    <!-- <p class="mx-3">
+      <a href="/kontakt.html" class="tag-button no-underline">
+        <span class="tag is-info is-light is-inline-tag px-5 my-1">
+          Zu den Kontaktmöglichkeiten
+        </span>
+      </a>
+    </p> -->
+    <p>
+      Ich melde mich zeitnah bei Dir und wir bestimmen,
+      wie ich am besten helfen kann.
+      Wir einigen uns auf eine faire
+      <a href="#preise">Vergütung</a>
+      und ich sende Dir einen Link zur unkomplizierten Zahlungsabwicklung.
+      <!-- Ich gebe Dir zum ersten Mal Nachhilfe?
+      Dann gebe ich Dir gerne Zeit mich kennenzulernen! -->
+    </p>
+    <!-- <p>
+      <a href="/kontakt.html" class="tag-button no-underline">
+        <span class="tag is-success is-light is-inline-tag px-5 my-1">
+          Erfahre mehr über mich
+        </span>
+      </a>
+    </p> -->
+    <p>
+      Anschließend bereite ich die vereinbarte Leistung vor
+      und gebe Dir <a href="#nachhilfe">Nachhilfe</a>
+      zu einem festgelegten Termin oder
+      fertige die von Dir gewünschten
+      <a href="#muster">Muster&shy;lösungen</a> an.
+    </p>
+    <p>
+      Meine Nachhilfe findet online über ein interaktives
+      Zoom&hyphen;Meeting statt.
+      Ich biete die Möglichkeit an einem gemeinsamen
+      <a href="#whiteboard">Whiteboard</a> zu arbeiten
+      und in einer geteilten
+      <a href="#programmieren">Entwicklungsumgebung</a> zu programmieren.
+    </p>
+  </div>
+</div>
+
+<div class="segment" style="padding-top: 2rem;">
+  <div class="segment-content">
+    <%- include('_views/components/chat.ejs', {
+      messages: [
+        {
+          self: true,
+          // text: 'Gebe ich Dir zum ersten Mal Nachhilfe?',
+          text: `Wir kennen uns noch nicht?`,
+          container_class: 'no-arrow-padding',
+          class: 'is-fullwidth'
+        },
+        {
+          include_file: '_views/components/buttons/meet-me.ejs',
+          container_class: 'no-arrow-padding',
+          class: 'chat-button'
+        },
+      ]
+    }) %>
+  </div>
+</div>
+
+<span id="details" class="anchor"></span>
+<!-- Reduce the top padding because of the speech bubbles. -->
+<div class="segment pt-5">
+  <div class="segment-content is-text is-wide">
+    <h5 class="title is-5 mt-0">
+      Details
+    </h5>
+    <p>
+      Im Folgenden findest du alle wichtigen Informationen.
+      Klicke auf eine Sprungmarke
+      um zum jeweiligen Abschnitt zu gelangen.
+    </p>
+    <div class="lined mx-3 mb-1">
+      <span style="font-size: small; color: #888">
+        Sprungmarken
+      </span>
+    </div>
+    <% arr = [
+      [
+        ['Ablauf', '#ablauf'],
+        ['Nachhilfe', '#details'],
+        ['Tools', '#details'],
+        ['Musterlösungen', '#details'],
+        ['Module', '#details'],
+        ['Zahlung', '#details'],
+        // ['Sprechstunde', '#details'],
+        ['Beratung', '#details'],
+        ['Über mich', '#details'],
+        ['Kontakt', '/kontakt.html'],
+      ]
+    ] %>
+    <% for (let i = 0; i < arr.length; i++) { %>
+      <div class="navigation mx-3 <%= i > 0 ? 'mt-1' : '' %>">
+        <ol class="is-inline">
+          <% subarr = arr[i] %>
+          <% for (let j = 0; j < subarr.length; j++) { %>
+            <% name = subarr[j][0] %>
+            <% href = subarr[j][1] %>
+            <% classes = subarr[j][2] || '' %>
+            <li>
+              <a href="<%= href %>" class="tag-button no-underline <%= classes %>">
+                <span class="tag is-light is-inline-tag mt-1"><%= name %></span>
+              </a>
+            </li>
+          <% } %>
+        </ol>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<div class="segment py-6">
+  <div class="segment-content is-text is-wide">
+    <p class="is-italic">
+      <!-- TODO Add detailed information -->
+      Nähere Informationen sind bald verfügbar.
+    </p>
+    <p>
+      Bei Fragen stehe ich jederzeit zur Verfügung.<br>
+      Ich freue mich auf Deine Nachricht!
+    </p>
+    <p class="mx-3">
+      <a href="/kontakt.html" class="tag-button no-underline">
+        <span class="tag is-info is-light is-inline-tag px-4 my-1">
+          Zu den Kontaktmöglichkeiten
+        </span>
+      </a>
+    </p>
+  </div>
+</div>
