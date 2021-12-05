@@ -226,7 +226,7 @@ ol.is-inline {
     border-bottom: 1px solid $offer-border-color;
 }
 
-$page-content-max-width: 450px;
+$page-content-max-width: 550px;
 $page-padding-x: 1.5rem;
 $page-mobile-add-x: .5rem;
 $header-y-padding: .6rem;
@@ -297,10 +297,12 @@ body.has-navbar-fixed-top {
 
     @include from($tablet) {
         &.is-wide {
-            max-width: 500px;
+            // max-width: 500px;
+            max-width: $page-content-max-width + 50px;
         }
         &.is-wider {
-            max-width: 600px;
+            // max-width: 600px;
+            max-width: $page-content-max-width + 150px;
         }
     }
 
@@ -477,8 +479,10 @@ $arrow-size: 8px;
     }
 }
 
+$chat-bubble-max-width: 320px;
+
 .chat-bubble {
-    max-width: 80%;
+    max-width: $chat-bubble-max-width;
     display: inline-block;
     position: relative;
     text-align: left;
@@ -511,8 +515,6 @@ $arrow-size: 8px;
 }
 
 .chat-button {
-    $chat-bubble-max-width: 80%;
-
     &.is-fullwidth {
         min-width: $chat-bubble-max-width;
     }
