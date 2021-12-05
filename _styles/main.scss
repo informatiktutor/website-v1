@@ -480,8 +480,14 @@ $arrow-size: 8px;
 }
 
 $chat-bubble-max-width: 320px;
+$chat-bubble-max-width-dynamic: 80%;
 
 .chat-bubble {
+
+    @include mobile {
+        max-width: $chat-bubble-max-width-dynamic;
+    }
+    
     max-width: $chat-bubble-max-width;
     display: inline-block;
     position: relative;
@@ -516,6 +522,9 @@ $chat-bubble-max-width: 320px;
 
 .chat-button {
     &.is-fullwidth {
+        @include mobile {
+            min-width: $chat-bubble-max-width-dynamic;
+        }
         min-width: $chat-bubble-max-width;
     }
 
@@ -525,7 +534,7 @@ $chat-bubble-max-width: 320px;
 
     & a.button,
     & button.button {
-        min-width: Min($chat-bubble-max-width, 280px);
+        min-width: Min($chat-bubble-max-width-dynamic, 280px);
         
         &.is-outlined:not(:hover)  {
             background: white;
